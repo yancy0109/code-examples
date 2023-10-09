@@ -3,6 +3,7 @@ package com.yancy.bio.client;
 import java.io.IOException;
 import java.net.Socket;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author yancy0109
@@ -21,7 +22,7 @@ public class BioClient {
     }
 
     public void start() {
-        new BioClientHandler(this.socket, Charset.forName("GBK")).run();
+        new BioClientHandler(this.socket, StandardCharsets.UTF_8).run();
     }
 
     public static void main(String[] args) {

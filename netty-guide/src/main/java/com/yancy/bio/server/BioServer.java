@@ -5,6 +5,7 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author yancy0109
@@ -28,7 +29,7 @@ public class BioServer implements Runnable {
             System.out.println("BioServer start done");
             while (true) {
                 Socket socket = serverSocket.accept();
-                BioServerHandler handler = new BioServerHandler(socket, Charset.forName("GBK"));
+                BioServerHandler handler = new BioServerHandler(socket, StandardCharsets.UTF_8);
                 // 开启线程处理与子线程的链接
                 new Thread(handler).start();
             }
