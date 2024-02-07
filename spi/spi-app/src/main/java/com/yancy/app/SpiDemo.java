@@ -1,4 +1,4 @@
-package com.yancy.spi.app;
+package com.yancy.app;
 
 import com.yancy.spi.DataStorage;
 
